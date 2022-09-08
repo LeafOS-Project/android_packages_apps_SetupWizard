@@ -53,10 +53,10 @@ public class SetupWizardActivity extends BaseSetupWizardActivity {
             SetupWizardUtils.enableComponent(this, WizardManager.class);
             Intent intent = new Intent(ACTION_LOAD);
             if (isPrimaryUser()) {
-                intent.putExtra(EXTRA_SCRIPT_URI, getString(R.string.lineage_wizard_script_uri));
+                intent.putExtra(EXTRA_SCRIPT_URI, getString(R.string.leaf_wizard_script_uri));
             } else {
                 intent.putExtra(EXTRA_SCRIPT_URI,
-                        getString(R.string.lineage_wizard_script_user_uri));
+                        getString(R.string.leaf_wizard_script_user_uri));
             }
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | FLAG_GRANT_READ_URI_PERMISSION);
             startActivity(intent);
