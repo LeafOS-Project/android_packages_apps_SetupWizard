@@ -57,10 +57,6 @@
     </WizardAction>
 
     <WizardAction wizard:uri="intent:#Intent;action=org.lineageos.setupwizard.LINEAGE_BIOMETRIC_SETTINGS;end" id="biometric_settings">
-        <result wizard:action="restore" />
-    </WizardAction>
-
-    <WizardAction wizard:uri="intent:#Intent;action=org.lineageos.setupwizard.LINEAGE_RESTORE_BACKUP;end" id="restore">
         <result wizard:action="navigation_settings" />
     </WizardAction>
 
