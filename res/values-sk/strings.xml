@@ -30,7 +30,7 @@
     <string name="update_recovery_description">Aktualizovať Lineage recovery pri prvom spustení po každej aktualizácii</string>
     <string name="update_recovery_warning">Oddiel recovery bude aktualizovaný ihneď potom, ako dokončíte nastavenie. Vypnite túto funkciu, ak si prajete ponechať oddiel nezmenený.</string>
     <string name="update_recovery_setting">Aktualizovať Lineage recovery spoločne s OS</string>
-    <string name="setup_services">LineageOS funkcie</string>
-    <string name="services_help_improve_cm">Pomôžte vylepšiť <xliff:g id="name" example="LineageOS">%s</xliff:g></string>
+    <string name="setup_services">LeafOS funkcie</string>
+    <string name="services_help_improve_cm">Pomôžte vylepšiť <xliff:g id="name" example="LeafOS">%s</xliff:g></string>
     <string name="services_os_nav_keys_label"><b>Používajte navigačné tlačidlá na obrazovke</b> namiesto hardvérových tlačidiel.</string>
 </resources>

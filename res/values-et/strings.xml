@@ -25,6 +25,6 @@
     <string name="location_access_summary"><b>Luba rakendustel, mis on küsinud Teie nõusolekut</b> kasutada Teie asukoha informatsiooni. See võib tähendada nii Teie praegust kui ka eelnevaid asukohti.</string>
     <string name="update_recovery_title">Uuenda Lineage Recoveryt</string>
     <string name="update_recovery_setting">Uuenda Lineage Recoveryt koos OSiga</string>
-    <string name="services_help_improve_cm">Aita parendada <xliff:g id="name" example="LineageOS">%s</xliff:g>i</string>
+    <string name="services_help_improve_cm">Aita parendada <xliff:g id="name" example="LeafOS">%s</xliff:g>i</string>
     <string name="services_os_nav_keys_label"><b>Kasuta ekraanil olevaid navigeerimisklahve</b> riistvaraliste nuppude asemel.</string>
 </resources>

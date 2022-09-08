@@ -30,7 +30,7 @@
     <string name="update_recovery_description">Päivittää Lineage Recoveryn jokaisen päivityksen jälkeen ensimmäisellä käynnistyskerralla</string>
     <string name="update_recovery_warning">Recovery pävitetään kun asennus on valmis. Jos haluat säilyttää sen ennallaan, poista tämä ominaisuus käytöstä.</string>
     <string name="update_recovery_setting">Päivitä Lineage Recovery käyttöjärjestelmän rinnalla</string>
-    <string name="setup_services">LineageOS-ominaisuudet</string>
-    <string name="services_help_improve_cm">Auta parantamaan <xliff:g id="name" example="LineageOS">%s</xliff:g>ia</string>
+    <string name="setup_services">LeafOS-ominaisuudet</string>
+    <string name="services_help_improve_cm">Auta parantamaan <xliff:g id="name" example="LeafOS">%s</xliff:g>ia</string>
     <string name="services_os_nav_keys_label"><b>Käytä näytön navigointipalkkia</b> fyysisten näppäinten sijaan.</string>
 </resources>

@@ -30,7 +30,7 @@
     <string name="update_recovery_description">Ažuriraj Lineage Recovery pri prvom pokretanju nakon svakog ažuriranja.</string>
     <string name="update_recovery_warning">Recovery će se ažurirati čim završite s postavljanjem. Ako ga želite zadržati netaknutim, onemogućite ovu značajku.</string>
     <string name="update_recovery_setting">Ažuriraj Lineage Recovery zajedno sa OS</string>
-    <string name="setup_services">Značajke LineageOS-a</string>
-    <string name="services_help_improve_cm">Pomozite poboljšati <xliff:g id="name" example="LineageOS">%s</xliff:g></string>
+    <string name="setup_services">Značajke LeafOS-a</string>
+    <string name="services_help_improve_cm">Pomozite poboljšati <xliff:g id="name" example="LeafOS">%s</xliff:g></string>
     <string name="services_os_nav_keys_label"><b>Koristite navigacijske tipke na zaslonu</b>umjesto hardverskih tipki.</string>
 </resources>
