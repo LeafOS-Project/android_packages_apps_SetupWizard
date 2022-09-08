@@ -1,6 +1,7 @@
 /*
  * SPDX-FileCopyrightText: 2016 The CyanogenMod Project
  * SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
+ * SPDX-FileCopyrightText: 2022-2025 The LeafOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
