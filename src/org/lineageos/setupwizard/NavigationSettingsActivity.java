@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2022-2023 The LineageOS Project
+ * Copyright (C) 2022-2023 The LeafOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +23,6 @@ import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_GESTURAL_OV
 
 import static com.android.systemui.shared.recents.utilities.Utilities.isLargeScreen;
 
-import static org.lineageos.internal.util.DeviceKeysConstants.KEY_MASK_APP_SWITCH;
-import static org.lineageos.setupwizard.SetupWizardApp.DISABLE_NAV_KEYS;
 import static org.lineageos.setupwizard.SetupWizardApp.NAVIGATION_OPTION_KEY;
 
 import android.animation.Animator;
@@ -31,18 +30,19 @@ import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.content.Context;
+import android.content.res.Resources;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
+import android.provider.Settings;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.setupcompat.util.WizardManagerHelper;
-
-import lineageos.providers.LineageSettings;
 
 import org.lineageos.setupwizard.util.SetupWizardUtils;
 
@@ -58,21 +58,23 @@ public class NavigationSettingsActivity extends BaseSetupWizardActivity {
 
     private CheckBox mHideGesturalHint;
 
+    public static boolean hasNavigationBar(Context context) {
+        Resources resources = context.getResources();
+        int resIdShow = resources.getIdentifier("config_showNavigationBar", "bool", "android");
+        boolean hasNavigationBar = false;
+        if (resIdShow > 0) {
+            hasNavigationBar = resources.getBoolean(resIdShow);
+        }
+
+        return hasNavigationBar || "1".equals(SystemProperties.get("qemu.hw.mainkeys"));
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         mSetupWizardApp = (SetupWizardApp) getApplication();
-        boolean navBarEnabled = false;
-        if (mSetupWizardApp.getSettingsBundle().containsKey(DISABLE_NAV_KEYS)) {
-            navBarEnabled = mSetupWizardApp.getSettingsBundle().getBoolean(DISABLE_NAV_KEYS);
-        }
-        mIsTaskbarEnabled = LineageSettings.System.getInt(getContentResolver(),
-                LineageSettings.System.ENABLE_TASKBAR, isLargeScreen(this) ? 1 : 0) == 1;
-
-        int deviceKeys = getResources().getInteger(
-                org.lineageos.platform.internal.R.integer.config_deviceHardwareKeys);
-        boolean hasHomeKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
+        boolean navBarEnabled = hasNavigationBar(this);
 
         getGlifLayout().setDescriptionText(getString(R.string.navigation_summary));
         setNextText(R.string.next);
@@ -97,7 +99,7 @@ public class NavigationSettingsActivity extends BaseSetupWizardActivity {
 
         // Hide this page if the device has hardware keys but didn't enable navbar
         // or if there's <= 1 available navigation modes
-        if (!navBarEnabled && hasHomeKey || available <= 1) {
+        if (!navBarEnabled || available <= 1) {
             mSetupWizardApp.getSettingsBundle().putString(NAVIGATION_OPTION_KEY,
                     NAV_BAR_MODE_3BUTTON_OVERLAY);
             Intent intent = WizardManagerHelper.getNextIntent(getIntent(), Activity.RESULT_OK);
@@ -184,12 +186,10 @@ public class NavigationSettingsActivity extends BaseSetupWizardActivity {
     @Override
     protected void onNextPressed() {
         mSetupWizardApp.getSettingsBundle().putString(NAVIGATION_OPTION_KEY, mSelection);
-        if (!mIsTaskbarEnabled) {
-            boolean hideHint = mHideGesturalHint.isChecked();
-            LineageSettings.System.putIntForUser(getContentResolver(),
-                    LineageSettings.System.NAVIGATION_BAR_HINT, hideHint ? 0 : 1,
-                    UserHandle.USER_CURRENT);
-        }
+        boolean hideHint = mHideGesturalHint.isChecked();
+        Settings.Secure.putIntForUser(getContentResolver(),
+                Settings.Secure.NAVIGATION_BAR_HINT, hideHint ? 0 : 1,
+                UserHandle.USER_CURRENT);
         Intent intent = WizardManagerHelper.getNextIntent(getIntent(), Activity.RESULT_OK);
         nextAction(NEXT_REQUEST, intent);
     }
