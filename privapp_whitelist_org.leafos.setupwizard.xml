@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2022 The LeafOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,7 +16,7 @@
      limitations under the License.
 -->
 <permissions>
-    <privapp-permissions package="org.lineageos.setupwizard">
+    <privapp-permissions package="org.leafos.setupwizard">
         <permission name="android.permission.BACKUP"/>
         <permission name="android.permission.CHANGE_COMPONENT_ENABLED_STATE"/>
         <permission name="android.permission.CHANGE_CONFIGURATION"/>
