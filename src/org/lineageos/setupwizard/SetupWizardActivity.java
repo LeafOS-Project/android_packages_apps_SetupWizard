@@ -26,6 +26,7 @@ import static org.lineageos.setupwizard.SetupWizardApp.LOGV;
 import android.annotation.Nullable;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 
 import com.google.android.setupcompat.util.WizardManagerHelper;
@@ -44,16 +45,24 @@ public class SetupWizardActivity extends BaseSetupWizardActivity {
         }
         if (SetupWizardUtils.hasGMS(this)) {
             SetupWizardUtils.disableHome(this);
+            if (SetupWizardUtils.isOwner()) {
+                Settings.Global.putInt(getContentResolver(),
+                        Settings.Global.ASSISTED_GPS_ENABLED, 1);
+            }
             finish();
-        } else if (WizardManagerHelper.isUserSetupComplete(this)) {
+        } else if (WizardManagerHelper.isUserSetupComplete(this)
+                && !SetupWizardUtils.isManagedProfile(this)) {
             SetupWizardUtils.finishSetupWizard(this);
             finish();
         } else {
             onSetupStart();
             SetupWizardUtils.enableComponent(this, WizardManager.class);
             Intent intent = new Intent(ACTION_LOAD);
-            if (isPrimaryUser()) {
+            if (SetupWizardUtils.isOwner()) {
                 intent.putExtra(EXTRA_SCRIPT_URI, getString(R.string.lineage_wizard_script_uri));
+            } else if (SetupWizardUtils.isManagedProfile(this)) {
+                intent.putExtra(EXTRA_SCRIPT_URI, getString(
+                        R.string.lineage_wizard_script_managed_profile_uri));
             } else {
                 intent.putExtra(EXTRA_SCRIPT_URI,
                         getString(R.string.lineage_wizard_script_user_uri));

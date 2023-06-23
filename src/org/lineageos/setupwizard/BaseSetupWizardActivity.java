@@ -88,7 +88,6 @@ public abstract class BaseSetupWizardActivity extends Activity implements Naviga
     protected boolean mIsExiting = false;
     private final boolean mIsFirstRun = true;
     protected boolean mIsGoingBack = false;
-    private boolean mIsPrimaryUser;
     protected int mResultCode = 0;
     private Intent mResultData;
 
@@ -112,7 +111,6 @@ public abstract class BaseSetupWizardActivity extends Activity implements Naviga
         }
         super.onCreate(savedInstanceState);
         registerReceiver(finishReceiver, new IntentFilter(ACTION_SETUP_COMPLETE));
-        mIsPrimaryUser = UserHandle.myUserId() == 0;
         initLayout();
         mNavigationBar = getNavigationBar();
         if (mNavigationBar != null) {
@@ -126,7 +124,9 @@ public abstract class BaseSetupWizardActivity extends Activity implements Naviga
             logActivityState("onStart");
         }
         super.onStart();
-        exitIfSetupComplete();
+        if (!SetupWizardUtils.isManagedProfile(this)) {
+            exitIfSetupComplete();
+        }
     }
 
     @Override
@@ -259,9 +259,7 @@ public abstract class BaseSetupWizardActivity extends Activity implements Naviga
 
     protected void hideNextButton() {
         if (mNavigationBar != null) {
-            Animation fadeOut = AnimationUtils.loadAnimation(this, android.R.anim.fade_out);
             final Button next = mNavigationBar.getNextButton();
-            next.startAnimation(fadeOut);
             next.setVisibility(INVISIBLE);
         }
     }
@@ -314,8 +312,10 @@ public abstract class BaseSetupWizardActivity extends Activity implements Naviga
     }
 
     protected void onSetupStart() {
-        SetupWizardUtils.disableCaptivePortalDetection(getApplicationContext());
-        tryEnablingWifi();
+        if (SetupWizardUtils.isOwner()) {
+            SetupWizardUtils.disableCaptivePortalDetection(getApplicationContext());
+            tryEnablingWifi();
+        }
     }
 
     protected void exitIfSetupComplete() {
@@ -518,10 +518,6 @@ public abstract class BaseSetupWizardActivity extends Activity implements Naviga
 
     protected boolean isFirstRun() {
         return mIsFirstRun;
-    }
-
-    protected boolean isPrimaryUser() {
-        return mIsPrimaryUser;
     }
 
     public boolean hasMultipleUsers() {

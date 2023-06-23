@@ -29,6 +29,7 @@ import static org.lineageos.setupwizard.SetupWizardApp.LOGV;
 import static org.lineageos.setupwizard.SetupWizardApp.NAVIGATION_OPTION_KEY;
 
 import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.app.WallpaperManager;
 import android.content.Context;
@@ -48,7 +49,6 @@ import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.widget.ImageView;
 
-import com.google.android.setupcompat.util.SystemBarHelper;
 import com.google.android.setupcompat.util.WizardManagerHelper;
 
 import org.lineageos.setupwizard.util.SetupWizardUtils;
@@ -74,6 +74,13 @@ public class FinishActivity extends BaseSetupWizardActivity {
         mSetupWizardApp = (SetupWizardApp) getApplication();
         mReveal = (ImageView) findViewById(R.id.reveal);
         setNextText(R.string.start);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (!mIsFinishing) {
+            super.onBackPressed();
+        }
     }
 
     @Override
@@ -108,7 +115,7 @@ public class FinishActivity extends BaseSetupWizardActivity {
         sendBroadcastAsUser(i, getCallingUserHandle(), FINISH_SETUP);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
-        SystemBarHelper.hideSystemBars(getWindow());
+        hideNextButton();
         finishSetup();
     }
 
@@ -142,7 +149,7 @@ public class FinishActivity extends BaseSetupWizardActivity {
         Animator anim =
                 ViewAnimationUtils.createCircularReveal(mReveal, cx, cy, 0, finalRadius);
         anim.setDuration(900);
-        anim.addListener(new Animator.AnimatorListener() {
+        anim.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationStart(Animator animation) {
                 mReveal.setVisibility(View.VISIBLE);
@@ -156,14 +163,6 @@ public class FinishActivity extends BaseSetupWizardActivity {
                         completeSetup();
                     }
                 });
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animation) {
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animation) {
             }
         });
         anim.start();

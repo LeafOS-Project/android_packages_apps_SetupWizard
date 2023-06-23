@@ -54,7 +54,7 @@
     <string name="services_pp_explanation">Οι υπηρεσίες αυτές έχουν σκοπό να επεκτείνουν τις δυνατότητες της συσκευής σας. Τα δεδομένα θα χρησιμοποιηθούν σύμφωνα με την πολιτική απορρήτου του <xliff:g id="name" example="LeafOS">%1$s</xliff:g>.</string>
     <string name="services_find_privacy_policy">Μπορείτε να διαβάσετε την πολιτική απορρήτου σε μια άλλη συσκευή επισκεπτόμενοι το <xliff:g id="uri" example="https://lineageos.org/legal">%1$s</xliff:g></string>
     <string name="services_help_improve_cm">Βοηθήστε στη βελτίωση του <xliff:g id="name" example="LeafOS">%s</xliff:g></string>
-    <string name="services_metrics_label"><xliff:g id="name" example="Help improve LineageOS">%1$s</xliff:g> στέλνοντας αυτόματα διαγνωστικά δεδομένα και στατιστικά χρήσης στο <xliff:g id="name" example="LeafOS">%2$s</xliff:g>. Αυτές οι πληροφορίες δε μπορούν να χρησιμοποιηθούν για να σας αναγνωρίσουν και δίνουν ένα χέρι βοηθείας στις ομάδες που εργάζονται σε θέματα όπως η διάρκεια ζωής μπαταρίας, επιδόσεις εφαρμογών και νέα χαρακτηριστικά του <xliff:g id="name" example="LeafOS">%2$s</xliff:g>.</string>
+    <string name="services_metrics_label"><xliff:g id="name" example="Help improve LeafOS">%1$s</xliff:g> στέλνοντας αυτόματα διαγνωστικά δεδομένα και στατιστικά χρήσης στο <xliff:g id="name" example="LeafOS">%2$s</xliff:g>. Αυτές οι πληροφορίες δε μπορούν να χρησιμοποιηθούν για να σας αναγνωρίσουν και δίνουν ένα χέρι βοηθείας στις ομάδες που εργάζονται σε θέματα όπως η διάρκεια ζωής μπαταρίας, επιδόσεις εφαρμογών και νέα χαρακτηριστικά του <xliff:g id="name" example="LeafOS">%2$s</xliff:g>.</string>
     <string name="services_os_nav_keys_label"><b>Κάντε χρήση των πλήκτρων πλοήγησης της οθόνης</b> αντί των φυσικών πλήκτρων.</string>
     <string name="services_full_description"><xliff:g id="pp_explanation">%1$s</xliff:g>\n<xliff:g id="pp_find">%2$s</xliff:g></string>
     <string name="settings_biometric_setup_title">Επιλέξτε δευτερεύον κλείδωμα οθόνης</string>
@@ -89,4 +89,5 @@
     <string name="two_button_navigation">Πλοήγηση με δύο πλήκτρα</string>
     <string name="navbar_navigation">Πλοήγηση με τρία πλήκτρα</string>
     <string name="hide_gesture_hint">Απόκρυψη υποδείξεων πλοήγησης με χειρονομίες</string>
+    <string name="location_agps_access_summary">Όταν η τοποθεσία είναι ενεργοποιημένη, <b>λήψη δεδομένων δορυφορικής βοήθειας από το διαδίκτυο</b>, τα οποία μπορούν να βελτιώσουν σημαντικά την απόδοση εκκίνησης GPS.</string>
 </resources>

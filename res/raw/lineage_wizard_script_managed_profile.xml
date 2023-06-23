@@ -2,6 +2,7 @@
 
 <!--
      Copyright (C) 2016 The CyanogenMod Project
+     Copyright (C) 2021 The Calyx Institute
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -34,6 +35,7 @@
     <WizardAction wizard:uri="intent:#Intent;action=org.lineageos.setupwizard.LINEAGE_SETUP_COMPLETE;end" id="finish">
         <result wizard:action="exit" />
     </WizardAction>
+
     <WizardAction wizard:uri="intent:#Intent;action=org.lineageos.setupwizard.EXIT;end" id="exit" />
 
 </WizardScript>

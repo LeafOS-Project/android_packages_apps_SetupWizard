@@ -21,6 +21,7 @@
 
     <string name="lineage_wizard_script_uri" translatable="false">android.resource://org.lineageos.setupwizard/raw/lineage_wizard_script</string>
     <string name="lineage_wizard_script_user_uri" translatable="false">android.resource://org.lineageos.setupwizard/raw/lineage_wizard_script_user</string>
+    <string name="lineage_wizard_script_managed_profile_uri" translatable="false">android.resource://org.lineageos.setupwizard/raw/lineage_wizard_script_managed_profile</string>
 
     <string name="activity_label_empty" />
 
@@ -70,7 +71,7 @@
     <string name="services_find_privacy_policy">You can read the privacy policy on another device by visiting <xliff:g id="uri" example="https://lineageos.org/legal">%1$s</xliff:g></string>
     <string name="services_privacy_policy_uri" translatable="false">https://lineageos.org/legal</string>
     <string name="services_help_improve_cm">Help improve <xliff:g id="name" example="LeafOS">%s</xliff:g></string>
-    <string name="services_metrics_label"><xliff:g id="name" example="Help improve LineageOS">%1$s</xliff:g> by automatically sending diagnostic and usage data to <xliff:g id="name" example="LineageOS">%2$s</xliff:g>. This information can’t be used to identify you and lends a hand to teams working on things like battery life, app performance, and new <xliff:g id="name" example="LeafOS">%3$s</xliff:g> features.</string>
+    <string name="services_metrics_label"><xliff:g id="name" example="Help improve LineageOS">%1$s</xliff:g> by automatically sending diagnostic and usage data to <xliff:g id="name" example="LeafOS">%2$s</xliff:g>. This information can’t be used to identify you and lends a hand to teams working on things like battery life, app performance, and new <xliff:g id="name" example="LeafOS">%3$s</xliff:g> features.</string>
     <string name="services_os_nav_keys_label"><b>Use on screen navigation keys</b> instead of hardware keys.</string>
     <string name="services_full_description"><xliff:g id="pp_explanation">%1$s</xliff:g>\n<xliff:g id="pp_find">%2$s</xliff:g></string>
 
@@ -115,4 +116,7 @@
     <string name="two_button_navigation">2-button navigation</string>
     <string name="navbar_navigation">3-button navigation</string>
     <string name="hide_gesture_hint">Hide gestural navigation hint</string>
+
+    <!-- Assisted GPS -->
+    <string name="location_agps_access_summary">When location is on, <b>download satellite assistance data from the internet</b>, which can greatly improve the GPS startup performance.</string>
 </resources>

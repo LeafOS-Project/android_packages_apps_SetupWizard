@@ -39,9 +39,13 @@ public class SetupWizardExitActivity extends BaseSetupWizardActivity {
         if (LOGV) {
             Log.v(TAG, "onCreate savedInstanceState=" + savedInstanceState);
         }
-        SetupWizardUtils.enableCaptivePortalDetection(this);
+        if (SetupWizardUtils.isOwner()) {
+            SetupWizardUtils.enableCaptivePortalDetection(this);
+        }
         PhoneMonitor.onSetupFinished();
-        launchHome();
+        if (!SetupWizardUtils.isManagedProfile(this)) {
+            launchHome();
+        }
         finish();
         applyForwardTransition(TRANSITION_ID_FADE);
         Intent i = new Intent();
