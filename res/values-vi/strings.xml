@@ -54,7 +54,7 @@
     <string name="services_pp_explanation">Các dịch vụ này giúp bạn mở rộng khả năng của thiết bị. Dữ liệu sẽ được sử dụng theo chính sách bảo mật của <xliff:g id="name" example="LeafOS">%1$s</xliff:g>.</string>
     <string name="services_find_privacy_policy">Bạn có thể đọc chính sách bảo mật trên một thiết bị khác bằng cách truy cập <xliff:g id="uri" example="https://lineageos.org/legal">%1$s</xliff:g></string>
     <string name="services_help_improve_cm">Giúp cải thiện <xliff:g id="name" example="LeafOS">%s</xliff:g></string>
-    <string name="services_metrics_label"><xliff:g id="name" example="Help improve LineageOS">%1$s</xliff:g> bằng cách tự động gửi dữ liệu sử dụng và chẩn đoán đến <xliff:g id="name" example="LineageOS">%2$s</xliff:g>. Thông tin này không thể được sử dụng để nhận dạng bạn và hỗ trợ các nhóm làm việc về những yếu tố như thời lượng pin, hiệu suất ứng dụng và <xliff:g id="name" example="LeafOS">%3$s</xliff:g> tính năng mới.</string>
+    <string name="services_metrics_label"><xliff:g id="name" example="Help improve LineageOS">%1$s</xliff:g> bằng cách tự động gửi dữ liệu sử dụng và chẩn đoán đến <xliff:g id="name" example="LeafOS">%2$s</xliff:g>. Thông tin này không thể được sử dụng để nhận dạng bạn và hỗ trợ các nhóm làm việc về những yếu tố như thời lượng pin, hiệu suất ứng dụng và <xliff:g id="name" example="LeafOS">%3$s</xliff:g> tính năng mới.</string>
     <string name="services_os_nav_keys_label"><b>Sử dụng các phím điều hướng trên màn hình</b> thay cho các phím cứng.</string>
     <string name="services_full_description"><xliff:g id="pp_explanation">%1$s</xliff:g>\n<xliff:g id="pp_find">%2$s</xliff:g></string>
     <string name="settings_biometric_setup_title">Chọn kiểu khóa màn hình dự phòng</string>
@@ -71,10 +71,12 @@
     <string name="settings_lockscreen_setup_title">Chọn kiểu khóa màn hình</string>
     <string name="settings_lockscreen_setup_details">Bạn muốn khóa màn hình của bạn như thế nào?</string>
     <string name="lockscreen_setup_title" product="default">Bảo vệ điện thoại của bạn</string>
+    <string name="lockscreen_setup_title" product="device">Bảo vệ thiết bị của bạn</string>
     <string name="lockscreen_setup_title" product="tablet">Bảo vệ máy tính bảng của bạn</string>
     <string name="lockscreen_setup_summary"><b>Bảo vệ thiết bị này</b> và yêu cầu mã PIN, hình hoặc mật khẩu để mở khóa màn hình</string>
     <string name="lockscreen_setup_screen_lock_setup">Thiết lập</string>
     <string name="intro_restore_title">Khôi phục Sao lưu</string>
+    <string name="intro_restore_subtitle">Nếu bạn có bản sao lưu từ thiết bị <xliff:g id="name" example="LeafOS">%s</xliff:g> gần đây nhất của mình, bạn có thể khôi phục nó tại đây.</string>
     <string name="intro_restore_button">Khôi phục từ bản sao lưu</string>
     <string name="update_recovery_title">Cập nhật Lineage Recovery</string>
     <string name="update_recovery_description">Cập nhật Lineage Recovery khi bật máy lần đầu sau mỗi bản cập nhật.</string>
@@ -87,4 +89,5 @@
     <string name="two_button_navigation">Điều hướng 2 nút</string>
     <string name="navbar_navigation">Điều hướng 3 nút</string>
     <string name="hide_gesture_hint">Ẩn gợi ý điều hướng cử chỉ</string>
+    <string name="location_agps_access_summary">Khi vị trí được bật, hãy <b>tải xuống dữ liệu hỗ trợ vệ tinh từ internet</b>, dữ liệu này có thể cải thiện đáng kể hiệu suất khởi động GPS.</string>
 </resources>
